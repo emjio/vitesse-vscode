@@ -1,24 +1,23 @@
 {
-  "publisher": "antfu",
-  "name": "ext-name",
-  "displayName": "ext-name",
+  "publisher": "simonhe",
+  "name": "vitesse",
+  "displayName": "vitesse",
   "version": "0.0.0",
-  "private": true,
   "packageManager": "pnpm@8.1.1",
-  "description": "",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "description": "vitesse",
+  "author": "Simon He <https://github.com/Simon-He95>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/ext-name#readme",
+  "funding": "https://github.com/sponsors/Simon-He95",
+  "homepage": "https://github.com/Simon-He95/vitesse#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antfu/ext-name"
+    "url": "https://github.com/Simon-He95/vitesse"
   },
   "bugs": {
-    "url": "https://github.com/antfu/ext-name/issues"
+    "url": "https://github.com/Simon-He95/vitesse/issues"
   },
   "sponsor": {
-    "url": "https://github.com/sponsors/antfu"
+    "url": "https://github.com/Simon-He95/sponsor"
   },
   "categories": [
     "Other"
@@ -29,25 +28,24 @@
     "dist"
   ],
   "engines": {
-    "vscode": "^1.69.0"
+    "vscode": "^1.77.0"
   },
   "activationEvents": [
     "onStartupFinished"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --external vscode",
-    "dev": "nr build --watch",
-    "lint": "eslint .",
-    "vscode:prepublish": "nr build",
-    "publish": "vsce publish --no-dependencies",
-    "pack": "vsce package --no-dependencies",
+    "dev": "pnpm build --watch",
     "test": "vitest",
+    "build": "tsup src/index.ts --external vscode",
+    "pack": "vsce package --no-dependencies",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
+    "lint:fix": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache --fix",
+    "publish": "vsce publish --no-dependencies",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp && nr publish"
+    "release": "bumpp && pnpm run publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.4",
-    "@antfu/ni": "^0.21.2",
     "@types/node": "^18.15.11",
     "@types/vscode": "^1.77.0",
     "bumpp": "^9.1.0",
