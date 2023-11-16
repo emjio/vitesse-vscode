@@ -1,7 +1,7 @@
-import { window } from 'vscode'
+import { message } from '@vscode-use/utils'
 
 export function activate() {
-  window.showInformationMessage('Hello')
+  message.info('Hello')
 }
 
 export function deactivate() {
