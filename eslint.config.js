@@ -1,4 +1,4 @@
 // @ts-check
-import simon_he from '@simon_he/eslint-config'
+const simon_he = require('@simon_he/eslint-config').default
 
-export default simon_he()
+module.exports = simon_he()
