@@ -5,6 +5,7 @@ import { isInSponsor } from 'get-sponsors-list'
 import { displayName } from '../package.json'
 
 export async function activate(context: ExtensionContext) {
+  message.info('Hello')
   const disposes: Disposable[] = []
   let isSponsor = false
   const lan = getLocale()
@@ -27,7 +28,6 @@ export async function activate(context: ExtensionContext) {
         openExternalUrl('https://github.com/Simon-He95/sponsor')
     })
   }
-  message.info('Hello')
   disposes.push(addEventListener('auth-change', async (name: string, getsession) => {
     if (name === 'github') {
       session = await getsession(name)
